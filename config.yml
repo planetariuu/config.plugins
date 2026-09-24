@@ -1,0 +1,42 @@
+mobs:
+  zombie:
+    type: ZOMBIE
+    name: "&cСвирепый Зомби"
+    egg_material: ZOMBIE_SPAWN_EGG
+    lore:
+      - "&7Обычный воин ближнего боя"
+      - "&7Обладает повышенным здоровьем"
+    health: 40.0
+    speed: 0.25
+    effects:
+      - "INCREASE_DAMAGE:1"
+  skeleton:
+    type: SKELETON
+    name: "&bБыстрый Скелет"
+    egg_material: SKELETON_SPAWN_EGG
+    lore:
+      - "&7Дальнобойный юнит"
+      - "&7Накладывает замедление"
+    health: 25.0
+    speed: 0.35
+    effects:
+      - "SPEED:2"
+  golem:
+    type: IRON_GOLEM
+    name: "&eЖелезный Защитник"
+    egg_material: IRON_GOLEM_SPAWN_EGG
+    lore:
+      - "&7Медленный, но огромный урон и ХП"
+    health: 80.0
+    speed: 0.18
+    effects: []
+  spider:
+    type: SPIDER
+    name: "&aЯдовитый Паук"
+    egg_material: SPIDER_SPAWN_EGG
+    lore:
+      - "&7Быстрый и ловкий"
+    health: 30.0
+    speed: 0.32
+    effects:
+      - "SPEED:1"

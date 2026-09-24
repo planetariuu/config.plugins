@@ -2,17 +2,32 @@ duel:
   rounds_to_win: 3
   spawn_delay_ticks: 10
   max_mobs_per_player: 99
+  timer_seconds: 300
+  timer_warn_at: 60
 
-arena:
-  world: world
-  x: 6767.0
-  z: 1410.0
-  player_y: 228.0
-  mob_y: 220.0
+arena_settings:
   player_offset_x: 20.0
+  player_height_offset: 15.0
   mob_offset_x: 8.0
   spawn_spacing: 1.5
   spawn_per_row: 6
+
+arenas:
+  arena1:
+    world: world
+    x: 2000.0
+    y: 100.0
+    z: 2000.0
+  arena2:
+    world: world
+    x: 2000.0
+    y: 100.0
+    z: -2000.0
+  arena3:
+    world: world
+    x: -2000.0
+    y: 100.0
+    z: 2000.0
 
 hit_and_run:
   backoff_power: 0.6
@@ -22,9 +37,8 @@ mobs:
     name: "&cЗомби-Рыцарь"
     summon_command: 'summon zombie {equipment:{mainhand:{id:"minecraft:netherite_sword"},offhand:{id:"minecraft:totem_of_undying"},head:{id:"minecraft:netherite_helmet"},chest:{id:"minecraft:netherite_chestplate"},legs:{id:"minecraft:netherite_leggings"},feet:{id:"minecraft:netherite_boots"}}}'
     lore:
-      - "&7Тяжёлый рыцарь в незеритке"
-      - "&7Контрит скелета — догоняет и рубит"
-      - "&7Боится голема — тот крепче"
+      - "&7Тяжёлый рыцарь"
+      - "&7Контрит скелета"
     effects:
       - "SPEED:0"
     on_hit_effects: []
@@ -35,7 +49,6 @@ mobs:
     summon_command: 'summon spider'
     lore:
       - "&7Быстрый и ядовитый"
-      - "&7Отравляет укусом"
     effects:
       - "SPEED:1"
     on_hit_effects:
@@ -46,9 +59,8 @@ mobs:
     name: "&eЖелезный Голем"
     summon_command: 'summon iron_golem'
     lore:
-      - "&7Огромный запас здоровья (100 HP)"
-      - "&7Мощный урон в ближнем бою"
-      - "&7Медленный — боится скелета"
+      - "&7Огромный HP"
+      - "&7Контрится скелетом"
     effects: []
     on_hit_effects:
       - "SLOWNESS:1:3"
@@ -58,9 +70,8 @@ mobs:
     name: "&fСкелет-Лучник"
     summon_command: 'summon skeleton'
     lore:
-      - "&7Стреляет с дистанции"
-      - "&7Контрит голема — тот не догонит"
-      - "&7Слаб в ближнем бою"
+      - "&7Контрит голема"
+      - "&7Слаб против зомби"
     effects:
       - "SPEED:1"
     on_hit_effects:
@@ -71,9 +82,7 @@ mobs:
     name: "&2Крипер"
     summon_command: 'summon creeper'
     lore:
-      - "&7Взрывается при сближении"
-      - "&7Убивает почти любого вблизи"
-      - "&7Лёгкая цель для лучника"
+      - "&7Взрывается вблизи"
     effects:
       - "SPEED:1"
     on_hit_effects: []
@@ -83,8 +92,7 @@ mobs:
     name: "&5Эндермен"
     summon_command: 'summon enderman'
     lore:
-      - "&7Телепортируется к цели"
-      - "&7Высокий урон"
+      - "&7Телепортируется"
     effects:
       - "SPEED:1"
     on_hit_effects: []

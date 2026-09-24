@@ -1,58 +1,87 @@
+# ====== Дуэль ======
 arena:
-  world: "world"
+  world: world
   x: 6767.0
+  z: 1410.0
   player_y: 228.0
   mob_y: 220.0
-  z: 1410.0
 
+hit_and_run:
+  backoff_power: 0.6
+
+# ====== Мобы ======
+# Камень-ножницы-бумага:
+#   Голем > Зомби > Скелет > Голем
+#   Крипер — wildcard, ловится лукарем
 mobs:
-  skeleton_archer:
-    name: "&b🏹 Скелет-Снайпер"
-    egg_material: "SKELETON_SPAWN_EGG"
-    summon_command: "summon skeleton {equipment:{mainhand:{id:bow,components:{enchantments:{levels:{'minecraft:punch':2,'minecraft:power':3}}}}}}"
+  zombie_netherite:
+    name: "&cЗомби-Рыцарь"
+    summon_command: 'summon zombie {equipment:{mainhand:{id:"minecraft:netherite_sword"},offhand:{id:"minecraft:totem_of_undying"},head:{id:"minecraft:netherite_helmet"},chest:{id:"minecraft:netherite_chestplate"},legs:{id:"minecraft:netherite_leggings"},feet:{id:"minecraft:netherite_boots"}}}'
     lore:
-      - "&7Тип: &aДальний бой"
-      - "&7Контрит: &eЖелезного Голема"
-      - "&cСлабость: &cЗомби"
-      - "&8Кайтит врага откидывающими стрелами"
+      - "&7Тяжёлый рыцарь в незеритке"
+      - "&7Контрит скелета — догоняет и рубит"
+      - "&7Боится голема — тот крепче"
+    effects:
+      - "SPEED:0"
+    on_hit_effects: []
+    hit_and_run: false
+
+  spider:
+    name: "&aЯдовитый Паук"
+    summon_command: 'summon spider'
+    lore:
+      - "&7Быстрый и ядовитый"
+      - "&7Отравляет укусом"
     effects:
       - "SPEED:1"
-    on_hit_effects: []
-
-  zombie_berserk:
-    name: "&c🧟 Зомби-Берсерк"
-    egg_material: "ZOMBIE_SPAWN_EGG"
-    summon_command: "summon zombie {IsBaby:0b,equipment:{mainhand:{id:iron_sword},chest:{id:iron_chestplate}}}"
-    lore:
-      - "&7Тип: &aСкоростной ближний бой"
-      - "&7Контрит: &bСкелета-Снайпера"
-      - "&cСлабость: &eЖелезного Голема"
-      - "&8Быстро подбегает и не дает стрелять"
-    effects:
-      - "SPEED:2"
     on_hit_effects:
-      - "SLOWNESS:0:2"
+      - "POISON:0:5"
+    hit_and_run: false
 
-  iron_golem_tank:
-    name: "&e🗿 Железный Голем"
-    egg_material: "IRON_GOLEM_SPAWN_EGG"
-    summon_command: "summon iron_golem"
+  iron_golem:
+    name: "&eЖелезный Голем"
+    summon_command: 'summon iron_golem'
     lore:
-      - "&7Тип: &aТяжёлый Танк"
-      - "&7Контрит: &cЗомби-Берсерка"
-      - "&cСлабость: &bСкелета-Снайпера"
-      - "&8Огромный запас здоровья и сокрушительный урон"
+      - "&7Огромный запас здоровья (100 HP)"
+      - "&7Мощный урон в ближнем бою"
+      - "&7Медленный — боится скелета"
     effects: []
-    on_hit_effects: []
+    on_hit_effects:
+      - "SLOWNESS:1:3"
+    hit_and_run: false
 
-  spider_assassin:
-    name: "&a🕷 Ядовитый Паук"
-    egg_material: "SPIDER_SPAWN_EGG"
-    summon_command: "summon spider"
+  skeleton:
+    name: "&fСкелет-Лучник"
+    summon_command: 'summon skeleton'
     lore:
-      - "&7Тип: &aЛовкач"
-      - "&8Накладывает сильный яд при ударе"
+      - "&7Стреляет с дистанции"
+      - "&7Контрит голема — тот не догонит"
+      - "&7Слаб в ближнем бою"
     effects:
       - "SPEED:1"
     on_hit_effects:
-      - "POISON:1:4"
+      - "WEAKNESS:0:3"
+    hit_and_run: false
+
+  creeper:
+    name: "&2Крипер"
+    summon_command: 'summon creeper'
+    lore:
+      - "&7Взрывается при сближении"
+      - "&7Убивает почти любого вблизи"
+      - "&7Лёгкая цель для лучника"
+    effects:
+      - "SPEED:1"
+    on_hit_effects: []
+    hit_and_run: false
+
+  enderman:
+    name: "&5Эндермен"
+    summon_command: 'summon enderman'
+    lore:
+      - "&7Телепортируется к цели"
+      - "&7Высокий урон"
+    effects:
+      - "SPEED:1"
+    on_hit_effects: []
+    hit_and_run: false

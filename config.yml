@@ -4,6 +4,7 @@ duel:
   max_mobs_per_player: 99
   timer_seconds: 300
   timer_warn_at: 60
+  spectator_bounds: 40.0
 
 arena_settings:
   player_offset_x: 20.0
@@ -35,7 +36,14 @@ hit_and_run:
 mobs:
   zombie_netherite:
     name: "&cЗомби-Рыцарь"
-    summon_command: 'summon zombie {equipment:{mainhand:{id:"minecraft:netherite_sword",count:1},offhand:{id:"minecraft:totem_of_undying",count:1},head:{id:"minecraft:netherite_helmet",count:1},chest:{id:"minecraft:netherite_chestplate",count:1},legs:{id:"minecraft:netherite_leggings",count:1},feet:{id:"minecraft:netherite_boots",count:1}}}'
+    summon_command: 'summon zombie'
+    equip:
+      helmet: NETHERITE_HELMET
+      chestplate: NETHERITE_CHESTPLATE
+      leggings: NETHERITE_LEGGINGS
+      boots: NETHERITE_BOOTS
+      mainhand: NETHERITE_SWORD
+      offhand: TOTEM_OF_UNDYING
     lore:
       - "&7Тяжёлый рыцарь"
       - "&7Контрит скелета"
@@ -67,32 +75,42 @@ mobs:
 
   skeleton_poison:
     name: "&2Скелет-Отравитель"
-    summon_command: 'summon skeleton {HandItems:[{id:"minecraft:bow",count:1},{id:"minecraft:tipped_arrow",count:64,tag:{Potion:"minecraft:poison"}}]}'
+    summon_command: 'summon skeleton'
+    equip:
+      mainhand: BOW
     lore:
       - "&7Стреляет отравленными стрелами"
-      - "&7Контрит голема"
     effects:
       - "SPEED:1"
     on_hit_effects:
-      - "WEAKNESS:0:3"
+      - "POISON:0:3"
     hit_and_run: false
 
   skeleton_weakness:
     name: "&8Скелет-Ослабляющий"
-    summon_command: 'summon skeleton {HandItems:[{id:"minecraft:bow",count:1},{id:"minecraft:tipped_arrow",count:64,tag:{Potion:"minecraft:weakness"}}]}'
+    summon_command: 'summon skeleton'
+    equip:
+      mainhand: BOW
     lore:
       - "&7Стреляет стрелами слабости"
     effects:
       - "SPEED:1"
-    on_hit_effects: []
+    on_hit_effects:
+      - "WEAKNESS:0:5"
     hit_and_run: false
 
   zombie_archer:
     name: "&6Зомби-Лучник"
-    summon_command: 'summon skeleton {HandItems:[{id:"minecraft:bow",count:1},{id:"minecraft:tipped_arrow",count:64,tag:{Potion:"minecraft:poison"}}],ArmorItems:[{id:"minecraft:netherite_boots",count:1},{id:"minecraft:netherite_leggings",count:1},{id:"minecraft:netherite_chestplate",count:1},{id:"minecraft:zombie_head",count:1}]}'
+    summon_command: 'summon skeleton'
+    equip:
+      helmet: ZOMBIE_HEAD
+      chestplate: NETHERITE_CHESTPLATE
+      leggings: NETHERITE_LEGGINGS
+      boots: NETHERITE_BOOTS
+      mainhand: BOW
     lore:
-      - "&7Выглядит как зомби, но стреляет"
-      - "&7Отравленные стрелы + незерит"
+      - "&7Скелет в голове зомби"
+      - "&7Незеритка + лук"
     effects:
       - "SPEED:0"
     on_hit_effects:

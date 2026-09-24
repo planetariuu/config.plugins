@@ -1,26 +1,22 @@
-# ====== Основные настройки дуэли ======
 duel:
-  rounds_to_win: 3              # Побед для победы в матче
-  spawn_delay_ticks: 10         # Задержка перед боем (20 тиков = 1 сек)
-  max_mobs_per_player: 99       # Максимум мобов (dueladmin duel)
+  rounds_to_win: 3
+  spawn_delay_ticks: 10
+  max_mobs_per_player: 99
 
-# ====== Арена ======
 arena:
   world: world
   x: 6767.0
   z: 1410.0
   player_y: 228.0
   mob_y: 220.0
-  player_offset_x: 20.0         # Насколько игроки разнесены от центра (было 15)
-  mob_offset_x: 8.0             # Насколько мобы разнесены от центра (было 5)
-  spawn_spacing: 1.5            # Расстояние между мобами в кластере
-  spawn_per_row: 6              # Мобов в одном ряду
+  player_offset_x: 20.0
+  mob_offset_x: 8.0
+  spawn_spacing: 1.5
+  spawn_per_row: 6
 
-# ====== Hit and Run ======
 hit_and_run:
   backoff_power: 0.6
 
-# ====== Мобы ======
 mobs:
   zombie_netherite:
     name: "&cЗомби-Рыцарь"

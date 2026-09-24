@@ -35,7 +35,7 @@ hit_and_run:
 mobs:
   zombie_netherite:
     name: "&cЗомби-Рыцарь"
-    summon_command: 'summon zombie {equipment:{mainhand:{id:"minecraft:netherite_sword"},offhand:{id:"minecraft:totem_of_undying"},head:{id:"minecraft:netherite_helmet"},chest:{id:"minecraft:netherite_chestplate"},legs:{id:"minecraft:netherite_leggings"},feet:{id:"minecraft:netherite_boots"}}}'
+    summon_command: 'summon zombie {equipment:{mainhand:{id:"minecraft:netherite_sword",count:1},offhand:{id:"minecraft:totem_of_undying",count:1},head:{id:"minecraft:netherite_helmet",count:1},chest:{id:"minecraft:netherite_chestplate",count:1},legs:{id:"minecraft:netherite_leggings",count:1},feet:{id:"minecraft:netherite_boots",count:1}}}'
     lore:
       - "&7Тяжёлый рыцарь"
       - "&7Контрит скелета"
@@ -60,22 +60,43 @@ mobs:
     summon_command: 'summon iron_golem'
     lore:
       - "&7Огромный HP"
-      - "&7Контрится скелетом"
     effects: []
     on_hit_effects:
       - "SLOWNESS:1:3"
     hit_and_run: false
 
-  skeleton:
-    name: "&fСкелет-Лучник"
-    summon_command: 'summon skeleton'
+  skeleton_poison:
+    name: "&2Скелет-Отравитель"
+    summon_command: 'summon skeleton {HandItems:[{id:"minecraft:bow",count:1},{id:"minecraft:tipped_arrow",count:64,tag:{Potion:"minecraft:poison"}}]}'
     lore:
+      - "&7Стреляет отравленными стрелами"
       - "&7Контрит голема"
-      - "&7Слаб против зомби"
     effects:
       - "SPEED:1"
     on_hit_effects:
       - "WEAKNESS:0:3"
+    hit_and_run: false
+
+  skeleton_weakness:
+    name: "&8Скелет-Ослабляющий"
+    summon_command: 'summon skeleton {HandItems:[{id:"minecraft:bow",count:1},{id:"minecraft:tipped_arrow",count:64,tag:{Potion:"minecraft:weakness"}}]}'
+    lore:
+      - "&7Стреляет стрелами слабости"
+    effects:
+      - "SPEED:1"
+    on_hit_effects: []
+    hit_and_run: false
+
+  zombie_archer:
+    name: "&6Зомби-Лучник"
+    summon_command: 'summon skeleton {HandItems:[{id:"minecraft:bow",count:1},{id:"minecraft:tipped_arrow",count:64,tag:{Potion:"minecraft:poison"}}],ArmorItems:[{id:"minecraft:netherite_boots",count:1},{id:"minecraft:netherite_leggings",count:1},{id:"minecraft:netherite_chestplate",count:1},{id:"minecraft:zombie_head",count:1}]}'
+    lore:
+      - "&7Выглядит как зомби, но стреляет"
+      - "&7Отравленные стрелы + незерит"
+    effects:
+      - "SPEED:0"
+    on_hit_effects:
+      - "POISON:0:3"
     hit_and_run: false
 
   creeper:

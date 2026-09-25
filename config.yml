@@ -25,7 +25,7 @@ duel:
   spectator_center_y_offset: 5.0
 
 
-  child_track_radius_x: 30.0
+  child_track_radius_x: 60.0
   child_track_radius_y: 30.0
   child_track_radius_z: 60.0
 

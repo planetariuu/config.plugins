@@ -13,7 +13,32 @@ rarity_weights:
   EPIC: 9
   MYTHIC: 4
   LEGENDARY: 2
-  
+duel:
+  rounds_to_win: 3
+  spawn_delay_ticks: 10
+  max_mobs_per_player: 99
+  timer_seconds: 300
+  timer_warn_at: 60
+
+ 
+  spectator_bounds: 40.0
+  spectator_center_y_offset: 5.0
+
+
+  child_track_radius_x: 30.0
+  child_track_radius_y: 30.0
+  child_track_radius_z: 60.0
+
+
+  track_children_types:
+    - VEX
+    - SLIME
+    - MAGMA_CUBE
+    - GHAST
+    - PHANTOM
+    - SILVERFISH
+    - ENDERMITE
+    
 arena_settings:
   player_offset_x: 20.0
   player_height_offset: 15.0

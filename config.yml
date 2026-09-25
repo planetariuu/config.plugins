@@ -5,7 +5,15 @@ duel:
   timer_seconds: 300
   timer_warn_at: 60
   spectator_bounds: 40.0
-
+  
+rarity_weights:
+  COMMON: 44
+  RARE: 26
+  SUPER_RARE: 15
+  EPIC: 9
+  MYTHIC: 4
+  LEGENDARY: 2
+  
 arena_settings:
   player_offset_x: 20.0
   player_height_offset: 15.0

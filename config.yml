@@ -327,25 +327,6 @@ mobs:
     on_hit_effects: []
     hit_and_run: false
 
-  piglin_brute:
-    name: "Пиглин-Брут"
-    rarity: MYTHIC
-    icon: PIGLIN_BRUTE_SPAWN_EGG
-    summon_command: 'summon piglin_brute'
-    stats:
-      health: 50
-      speed: 0.28
-      damage: 13
-    equip:
-      mainhand: GOLDEN_AXE
-    lore:
-      - "&7Яростный воин"
-      - "&7Огромный урон"
-    effects: []
-    on_hit_effects:
-      - "WEAKNESS:0:4"
-    hit_and_run: false
-
   elder_guardian:
     name: "Древний Страж"
     rarity: MYTHIC

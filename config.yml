@@ -47,21 +47,9 @@ arena_settings:
   spawn_per_row: 6
 
 arenas:
-  arena1:
-    world: world
-    x: 2000.0
-    y: 100.0
-    z: 2000.0
-  arena2:
-    world: world
-    x: 2000.0
-    y: 100.0
-    z: -2000.0
-  arena3:
-    world: world
-    x: -2000.0
-    y: 100.0
-    z: 2000.0
+  arena1: "2000 100 2000"
+  arena2: "2000 100 -2000"
+  arena3: "-2000 100 -2000"
 
 hit_and_run:
   backoff_power: 0.6
@@ -325,6 +313,25 @@ mobs:
       - "&7Отбрасывает цель"
     effects: []
     on_hit_effects: []
+    hit_and_run: false
+
+  piglin_brute:
+    name: "Пиглин-Брут"
+    rarity: MYTHIC
+    icon: PIGLIN_BRUTE_SPAWN_EGG
+    summon_command: 'summon piglin_brute'
+    stats:
+      health: 50
+      speed: 0.28
+      damage: 13
+    equip:
+      mainhand: GOLDEN_AXE
+    lore:
+      - "&7Яростный воин"
+      - "&7Огромный урон"
+    effects: []
+    on_hit_effects:
+      - "WEAKNESS:0:4"
     hit_and_run: false
 
   elder_guardian:

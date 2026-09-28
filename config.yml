@@ -1,3 +1,4 @@
+
 duel:
   rounds_to_win: 3
   spawn_delay_ticks: 10
@@ -5,7 +6,22 @@ duel:
   timer_seconds: 300
   timer_warn_at: 60
   spectator_bounds: 40.0
-  
+  spectator_center_y_offset: 5.0
+
+  child_track_radius_x: 60.0
+  child_track_radius_y: 30.0
+  child_track_radius_z: 60.0
+
+  track_children_types:
+    - VEX
+    - SLIME
+    - MAGMA_CUBE
+    - GHAST
+    - PHANTOM
+    - SILVERFISH
+    - ENDERMITE
+
+
 rarity_weights:
   COMMON: 44
   RARE: 26
@@ -13,13 +29,8 @@ rarity_weights:
   EPIC: 9
   MYTHIC: 4
   LEGENDARY: 2
-duel:
-  rounds_to_win: 3
-  spawn_delay_ticks: 10
-  max_mobs_per_player: 99
-  timer_seconds: 300
-  timer_warn_at: 60
-  
+
+
 bet_values:
   default: 50
   DIAMOND: 500
@@ -39,25 +50,8 @@ bet_values:
   EMERALD_BLOCK: 2700
   GOLD_BLOCK: 1800
   IRON_BLOCK: 900
- 
-  spectator_bounds: 40.0
-  spectator_center_y_offset: 5.0
 
 
-  child_track_radius_x: 60.0
-  child_track_radius_y: 30.0
-  child_track_radius_z: 60.0
-
-
-  track_children_types:
-    - VEX
-    - SLIME
-    - MAGMA_CUBE
-    - GHAST
-    - PHANTOM
-    - SILVERFISH
-    - ENDERMITE
-    
 arena_settings:
   player_offset_x: 20.0
   player_height_offset: 15.0
@@ -65,16 +59,18 @@ arena_settings:
   spawn_spacing: 1.5
   spawn_per_row: 6
 
+
 arenas:
   arena1: "2000 100 2000"
   arena2: "2000 100 -2000"
   arena3: "-2000 100 -2000"
 
+
 hit_and_run:
   backoff_power: 0.6
 
-mobs:
 
+mobs:
 
   zombie:
     name: "Зомби"
@@ -125,7 +121,6 @@ mobs:
     on_hit_effects:
       - "POISON:0:3"
     hit_and_run: false
-
 
   husk:
     name: "Хаск"
@@ -201,7 +196,6 @@ mobs:
     effects: []
     on_hit_effects: []
     hit_and_run: false
-
 
   skeleton_poison:
     name: "Скелет-Отравитель"
@@ -369,7 +363,6 @@ mobs:
     on_hit_effects:
       - "MINING_FATIGUE:1:5"
     hit_and_run: false
-
 
   illusioner:
     name: "Иллюзионист"

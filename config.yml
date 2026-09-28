@@ -19,7 +19,26 @@ duel:
   max_mobs_per_player: 99
   timer_seconds: 300
   timer_warn_at: 60
-
+  
+bet_values:
+  default: 50
+  DIAMOND: 500
+  NETHERITE_INGOT: 1000
+  EMERALD: 300
+  GOLD_INGOT: 200
+  IRON_INGOT: 100
+  GOLDEN_APPLE: 400
+  ENCHANTED_GOLDEN_APPLE: 2000
+  NETHERITE_SCRAP: 800
+  ELYTRA: 3000
+  NETHER_STAR: 5000
+  TOTEM_OF_UNDYING: 1500
+  ANCIENT_DEBRIS: 700
+  DIAMOND_BLOCK: 4500
+  NETHERITE_BLOCK: 9000
+  EMERALD_BLOCK: 2700
+  GOLD_BLOCK: 1800
+  IRON_BLOCK: 900
  
   spectator_bounds: 40.0
   spectator_center_y_offset: 5.0

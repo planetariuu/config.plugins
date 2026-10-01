@@ -100,18 +100,20 @@ mobs:
       - "BLINDNESS:0:3"
     hit_and_run: false
 
-  warden:
-    name: "&d👁 Варден"
+    ghast:
+    name: "&c IgroPlay228"
     rarity: LEGENDARY
-    icon: SCULK_SENSOR
-    summon_command: 'summon warden'
+    icon: end_rod
+    summon_command: 'summon ghast'
     stats:
-      health: 500
-      speed: 0.30
-      damage: 30
+      health: 40
+      speed: 0.25
+      damage: 20
     lore:
-      - "&8• &7Слепой убийца"
-      - "&8• &7Слышит всё"
-    effects: []
+      - "&8• &7Чтоооооо"
+      - "&8• &7Ого"
+      - "&8• &7Сосал?"
+    effects:
+      - "FIRE_RESISTANCE:0"
     on_hit_effects: []
     hit_and_run: false

@@ -100,20 +100,17 @@ mobs:
       - "BLINDNESS:0:3"
     hit_and_run: false
 
-    ghast:
-    name: "&c IgroPlay228"
+      wither_weak:
+    name: "&d💀 igroplay227"
     rarity: LEGENDARY
-    icon: end_rod
-    summon_command: 'summon ghast'
+    icon: Bedrock
+    summon_command: 'summon wither ~ ~ ~ {Health:1f}'
     stats:
-      health: 40
-      speed: 0.25
-      damage: 20
+      health: 1
+      speed: 0.30
+      damage: 1
     lore:
-      - "&8• &7Чтоооооо"
-      - "&8• &7Ого"
-      - "&8• &7Сосал?"
-    effects:
-      - "FIRE_RESISTANCE:0"
+      - "&8• &7Проголосуй и ты сдохнешь"
+    effects: []
     on_hit_effects: []
     hit_and_run: false

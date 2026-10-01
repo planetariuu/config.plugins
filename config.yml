@@ -1,10 +1,3 @@
-# =========================================================
-#  DUEL ARENA CONFIG  v2.0  (optimized & balanced)
-#  Автор ребаланса: AI
-#  Изменения: удалён rabbit_killer, добавлены creeper-юниты,
-#             выровнены статы, добавлены роли и контр-пики.
-# =========================================================
-
 duel:
   rounds_to_win: 3
   spawn_delay_ticks: 10
@@ -26,11 +19,8 @@ duel:
     - PHANTOM
     - SILVERFISH
     - ENDERMITE
-    - CREEPER            # чтобы заряженные криперы не терялись
+    - CREEPER
 
-# ---------------------------------------------------------
-#  Веса редкостей (сумма = 100)
-# ---------------------------------------------------------
 rarity_weights:
   COMMON: 40
   RARE: 26
@@ -39,9 +29,6 @@ rarity_weights:
   MYTHIC: 5
   LEGENDARY: 3
 
-# ---------------------------------------------------------
-#  Ставки (bet values)
-# ---------------------------------------------------------
 bet_values:
   default: 50
   DIAMOND: 500
@@ -62,9 +49,6 @@ bet_values:
   GOLD_BLOCK: 1800
   IRON_BLOCK: 900
 
-# ---------------------------------------------------------
-#  Настройки арены
-# ---------------------------------------------------------
 arena_settings:
   player_offset_x: 20.0
   player_height_offset: 15.0
@@ -79,9 +63,6 @@ arenas:
   arena2: "2000 100 -2000"
   arena3: "-2000 100 -2000"
 
-# ---------------------------------------------------------
-#  Веса количества мобов
-# ---------------------------------------------------------
 spawn_count_weights:
   1-3: 40
   4-7: 30
@@ -92,17 +73,10 @@ spawn_count_weights:
 hit_and_run:
   backoff_power: 0.6
 
-# =========================================================
-#  MOBS
-#  Роли: Пехота / Стрелок / Ассасин / Танк / Маг / Босс
-#  Контр: у каждой роли есть естественный контр-класс.
-# =========================================================
 mobs:
 
-  # ------------------- COMMON (бюджетные юниты) -------------------
-
   zombie:
-    name: "&7⚔ &fЗомби-Воин"
+    name: "&a⚔ Зомби-Воин"
     rarity: COMMON
     icon: ZOMBIE_SPAWN_EGG
     summon_command: 'summon zombie'
@@ -111,18 +85,14 @@ mobs:
       speed: 0.24
       damage: 4
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &aОбычный"
-      - "&7Роль: &eПехота"
-      - "&8&m------------------------"
-      - "&7• Дешёвый пушечный мясо-юнит"
-      - "&7• Давит строем, слаб против AoE"
+      - "&8• &7Пехота ближнего боя"
+      - "&8• &7Давит строем"
     effects: []
     on_hit_effects: []
     hit_and_run: false
 
   skeleton:
-    name: "&f🏹 &fКостяной Стрелок"
+    name: "&a🏹 Костяной Стрелок"
     rarity: COMMON
     icon: SKELETON_SPAWN_EGG
     summon_command: 'summon skeleton'
@@ -133,18 +103,14 @@ mobs:
     equip:
       mainhand: BOW
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &aОбычный"
-      - "&7Роль: &bСтрелок"
-      - "&8&m------------------------"
-      - "&7• Держит дистанцию"
-      - "&7• Умирает в ближнем бою"
+      - "&8• &7Держит дистанцию"
+      - "&8• &7Слаб в ближнем бою"
     effects: []
     on_hit_effects: []
     hit_and_run: false
 
   spider:
-    name: "&a🕷 &aЯдовитый Паук"
+    name: "&a🕷 Ядовитый Паук"
     rarity: COMMON
     icon: SPIDER_SPAWN_EGG
     summon_command: 'summon spider'
@@ -153,12 +119,8 @@ mobs:
       speed: 0.32
       damage: 3
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &aОбычный"
-      - "&7Роль: &cЛовкач"
-      - "&8&m------------------------"
-      - "&7• Быстрая атака, слабый урон"
-      - "&7• Травит цель при укусе"
+      - "&8• &7Высокая скорость"
+      - "&8• &7Травит при укусе"
     effects:
       - "SPEED:1"
     on_hit_effects:
@@ -166,30 +128,24 @@ mobs:
     hit_and_run: false
 
   creeper:
-    name: "&2💥 &2Крипер-Диверсант"
+    name: "&a💥 Крипер-Диверсант"
     rarity: COMMON
     icon: CREEPER_SPAWN_EGG
     summon_command: 'summon creeper'
     stats:
-      health: 20
-      speed: 0.28
-      damage: 12              # урон взрыва (самоуничтожение)
+      health: 8
+      speed: 0.60
+      damage: 14
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &aОбычный"
-      - "&7Роль: &2Камикадзе"
-      - "&8&m------------------------"
-      - "&7• Взрывается при контакте"
-      - "&7• Разрушает плотный строй"
-      - "&7• Одноразовый — после взрыва исчезает"
-    effects: []
+      - "&8• &7Молниеносный камикадзе"
+      - "&8• &7Умирает от одного удара"
+    effects:
+      - "SPEED:3"
     on_hit_effects: []
     hit_and_run: false
 
-  # ------------------- RARE (специалисты) -------------------
-
   husk:
-    name: "&e🌵 &eПустынный Хаск"
+    name: "&9🌵 Пустынный Хаск"
     rarity: RARE
     icon: HUSK_SPAWN_EGG
     summon_command: 'summon husk'
@@ -198,19 +154,14 @@ mobs:
       speed: 0.24
       damage: 5
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &9Редкий"
-      - "&7Роль: &eИзнуритель"
-      - "&8&m------------------------"
-      - "&7• Устойчив к жаре"
-      - "&7• Накладывает Голод при ударе"
+      - "&8• &7Накладывает Голод"
     effects: []
     on_hit_effects:
       - "HUNGER:1:5"
     hit_and_run: false
 
   stray:
-    name: "&b❄ &bЛедяной Стрэй"
+    name: "&9❄ Ледяной Стрэй"
     rarity: RARE
     icon: STRAY_SPAWN_EGG
     summon_command: 'summon stray'
@@ -221,19 +172,14 @@ mobs:
     equip:
       mainhand: BOW
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &9Редкий"
-      - "&7Роль: &bКонтроль-Стрелок"
-      - "&8&m------------------------"
-      - "&7• Морозные стрелы"
-      - "&7• Замедляет цель → легко контрит ассасинов"
+      - "&8• &7Замедляет цель"
     effects: []
     on_hit_effects:
       - "SLOWNESS:1:4"
     hit_and_run: false
 
   cave_spider:
-    name: "&2☣ &2Пещерный Охотник"
+    name: "&9☣ Пещерный Охотник"
     rarity: RARE
     icon: CAVE_SPIDER_SPAWN_EGG
     summon_command: 'summon cave_spider'
@@ -242,12 +188,8 @@ mobs:
       speed: 0.34
       damage: 4
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &9Редкий"
-      - "&7Роль: &cАссасин"
-      - "&8&m------------------------"
-      - "&7• Молниеносный и юркий"
-      - "&7• Смертельный яд (Poison II)"
+      - "&8• &7Молниеносный ассасин"
+      - "&8• &7Смертельный яд"
     effects:
       - "SPEED:1"
     on_hit_effects:
@@ -255,7 +197,7 @@ mobs:
     hit_and_run: false
 
   zombie_knight:
-    name: "&6🛡 &6Зомби-Рыцарь"
+    name: "&9🛡 Зомби-Рыцарь"
     rarity: RARE
     icon: ZOMBIE_SPAWN_EGG
     summon_command: 'summon zombie'
@@ -271,20 +213,14 @@ mobs:
       mainhand: NETHERITE_SWORD
       offhand: TOTEM_OF_UNDYING
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &9Редкий"
-      - "&7Роль: &6Тяжёлый Танк"
-      - "&8&m------------------------"
-      - "&7• Фулл-незерит + Тотем"
-      - "&7• Медленный, но не убиваемый в лоб"
+      - "&8• &7Незеритовая защита"
+      - "&8• &7Держит Тотем"
     effects: []
     on_hit_effects: []
     hit_and_run: false
 
-  # ------------------- SUPER_RARE (анти-меты) -------------------
-
   skeleton_poison:
-    name: "&2🧪 &2Скелет-Отравитель"
+    name: "&5🧪 Скелет-Отравитель"
     rarity: SUPER_RARE
     icon: SKELETON_SPAWN_EGG
     summon_command: 'summon skeleton'
@@ -297,12 +233,8 @@ mobs:
       chestplate: CHAINMAIL_CHESTPLATE
       mainhand: BOW
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &5Сверхредкий"
-      - "&7Роль: &2Анти-Танк"
-      - "&8&m------------------------"
-      - "&7• Отравленные стрелы"
-      - "&7• Игнорирует броню (яд)"
+      - "&8• &7Отравленные стрелы"
+      - "&8• &7Анти-танк"
     effects:
       - "SPEED:1"
     on_hit_effects:
@@ -310,7 +242,7 @@ mobs:
     hit_and_run: false
 
   skeleton_wither:
-    name: "&8💀 &8Скелет-Иссушитель"
+    name: "&5💀 Скелет-Иссушитель"
     rarity: SUPER_RARE
     icon: WITHER_SKELETON_SPAWN_EGG
     summon_command: 'summon wither_skeleton'
@@ -322,19 +254,15 @@ mobs:
       helmet: NETHERITE_HELMET
       mainhand: NETHERITE_SWORD
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &5Сверхредкий"
-      - "&7Роль: &8Разрушитель"
-      - "&8&m------------------------"
-      - "&7• Высасывает жизнь"
-      - "&7• Накладывает Wither II"
+      - "&8• &7Высасывает жизнь"
+      - "&8• &7Накладывает Wither II"
     effects: []
     on_hit_effects:
       - "WITHER:1:5"
     hit_and_run: false
 
   zombie_archer:
-    name: "&a🎯 &aЗомби-Снайпер"
+    name: "&5🎯 Зомби-Снайпер"
     rarity: SUPER_RARE
     icon: SKELETON_SPAWN_EGG
     summon_command: 'summon skeleton'
@@ -349,66 +277,51 @@ mobs:
       boots: NETHERITE_BOOTS
       mainhand: BOW
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &5Сверхредкий"
-      - "&7Роль: &aБронированный Стрелок"
-      - "&8&m------------------------"
-      - "&7• Замаскированный скелет"
-      - "&7• Замедляет при попадании"
+      - "&8• &7Бронированный стрелок"
+      - "&8• &7Замедляет при попадании"
     effects: []
     on_hit_effects:
       - "SLOWNESS:1:3"
     hit_and_run: false
 
   charged_creeper:
-    name: "&b⚡ &bЗаряженный Крипер"
+    name: "&5⚡ Заряженный Крипер"
     rarity: SUPER_RARE
     icon: CREEPER_SPAWN_EGG
     summon_command: 'summon creeper ~ ~ ~ {powered:1b}'
     stats:
-      health: 24
-      speed: 0.30
-      damage: 22              # урон заряженного взрыва
+      health: 12
+      speed: 0.60
+      damage: 26
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &5Сверхредкий"
-      - "&7Роль: &bМега-Диверсант"
-      - "&8&m------------------------"
-      - "&7• Вдвое мощнее обычного взрыва"
-      - "&7• Радиус поражения огромен"
-      - "&7• Контрится дистанционными юнитами"
-    effects: []
+      - "&8• &7Сверхбыстрый диверсант"
+      - "&8• &7Огромный радиус взрыва"
+      - "&8• &7Умирает за секунды"
+    effects:
+      - "SPEED:3"
     on_hit_effects: []
     hit_and_run: false
 
-  # ------------------- EPIC (пауэрхаусы) -------------------
-
-  snowman:
-    name: "&b☃ &bСнеговик-Камикадзе"
-    rarity: EPIC
-    icon: SNOW_GOLEM_SPAWN_EGG
-    summon_command: 'summon snow_golem'
+  slime_king:
+    name: "&5🟢 Королевская Слизь"
+    rarity: SUPER_RARE
+    icon: SLIME_SPAWN_EGG
+    summon_command: 'summon slime ~ ~ ~ {Size:8}'
     stats:
-      health: 20
-      speed: 0.32
-      damage: 4
+      health: 60
+      speed: 0.28
+      damage: 9
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &dЭпический"
-      - "&7Роль: &bШтурмовик-Замедлитель"
-      - "&8&m------------------------"
-      - "&7• Скорострельные снежки"
-      - "&7• Слепит и замораживает цель"
-    effects:
-      - "SPEED:1"
-      - "RESISTANCE:1"
+      - "&8• &7Гигантская слизь"
+      - "&8• &7Разбивается на мелких"
+      - "&8• &7Отбрасывает и давит массой"
+    effects: []
     on_hit_effects:
-      - "SLOWNESS:2:4"
-      - "BLINDNESS:0:3"
+      - "SLOWNESS:1:3"
     hit_and_run: false
 
   enderman:
-    name: "&5🔮 &5Страж Эндера"
+    name: "&d🔮 Страж Эндера"
     rarity: EPIC
     icon: ENDERMAN_SPAWN_EGG
     summon_command: 'summon enderman'
@@ -417,18 +330,14 @@ mobs:
       speed: 0.32
       damage: 9
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &dЭпический"
-      - "&7Роль: &5Телепорт-Дуэлянт"
-      - "&8&m------------------------"
-      - "&7• Мгновенно сокращает дистанцию"
-      - "&7• Боится воды — контрится ареной"
+      - "&8• &7Мгновенный телепорт"
+      - "&8• &7Боится воды"
     effects: []
     on_hit_effects: []
     hit_and_run: false
 
   iron_golem:
-    name: "&7🗿 &7Железный Голем"
+    name: "&d🗿 Железный Голем"
     rarity: EPIC
     icon: IRON_GOLEM_SPAWN_EGG
     summon_command: 'summon iron_golem'
@@ -437,19 +346,15 @@ mobs:
       speed: 0.22
       damage: 14
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &dЭпический"
-      - "&7Роль: &7Монолитный Танк"
-      - "&8&m------------------------"
-      - "&7• Огромный запас HP"
-      - "&7• Подбрасывает врагов"
+      - "&8• &7Монолитный танк"
+      - "&8• &7Подбрасывает врагов"
     effects: []
     on_hit_effects:
       - "SLOWNESS:1:3"
     hit_and_run: false
 
   vindicator:
-    name: "&4🪓 &4Палач-Виндикатор"
+    name: "&d🪓 Палач-Виндикатор"
     rarity: EPIC
     icon: VINDICATOR_SPAWN_EGG
     summon_command: 'summon vindicator'
@@ -460,21 +365,15 @@ mobs:
     equip:
       mainhand: IRON_AXE
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &dЭпический"
-      - "&7Роль: &cБерсерк"
-      - "&8&m------------------------"
-      - "&7• Сокрушительный урон топором"
-      - "&7• Стеклянная пушка: много DMG, мало HP"
+      - "&8• &7Берсерк с топором"
+      - "&8• &7Много урона, мало HP"
     effects:
       - "SPEED:1"
     on_hit_effects: []
     hit_and_run: false
 
-  # ------------------- MYTHIC (топ-тир) -------------------
-
   ravager:
-    name: "&c🐗 &cСтенобитный Разоритель"
+    name: "&c🐗 Стенобитный Разоритель"
     rarity: MYTHIC
     icon: RAVAGER_SPAWN_EGG
     summon_command: 'summon ravager'
@@ -483,18 +382,14 @@ mobs:
       speed: 0.30
       damage: 13
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &cМифический"
-      - "&7Роль: &cДжаггернаут"
-      - "&8&m------------------------"
-      - "&7• Сбивает строй и отбрасывает"
-      - "&7• Непробиваемая шкура"
+      - "&8• &7Джаггернаут"
+      - "&8• &7Сбивает строй"
     effects: []
     on_hit_effects: []
     hit_and_run: false
 
   piglin_brute:
-    name: "&6🔥 &6Пиглин-Брут"
+    name: "&c🔥 Пиглин-Брут"
     rarity: MYTHIC
     icon: PIGLIN_BRUTE_SPAWN_EGG
     summon_command: 'summon piglin_brute'
@@ -508,19 +403,15 @@ mobs:
       mainhand: NETHERITE_AXE
       offhand: TOTEM_OF_UNDYING
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &cМифический"
-      - "&7Роль: &6Воин Ада"
-      - "&8&m------------------------"
-      - "&7• Топовый незеритовый топор"
-      - "&7• Ослабляет цель (Weakness II)"
+      - "&8• &7Незеритовый топор"
+      - "&8• &7Ослабляет цель"
     effects: []
     on_hit_effects:
       - "WEAKNESS:1:4"
     hit_and_run: false
 
   elder_guardian:
-    name: "&b👁 &bДревний Страж"
+    name: "&c👁 Древний Страж"
     rarity: MYTHIC
     icon: ELDER_GUARDIAN_SPAWN_EGG
     summon_command: 'summon elder_guardian'
@@ -529,48 +420,16 @@ mobs:
       speed: 0.25
       damage: 9
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &cМифический"
-      - "&7Роль: &bПовелитель Бездны"
-      - "&8&m------------------------"
-      - "&7• Утомляет цель (Mining Fatigue)"
-      - "&7• Замедляет и игнорирует броню"
+      - "&8• &7Утомляет цель"
+      - "&8• &7Игнорирует броню"
     effects: []
     on_hit_effects:
       - "MINING_FATIGUE:1:6"
       - "SLOWNESS:1:3"
     hit_and_run: false
 
-  # ------------------- LEGENDARY (боссы) -------------------
-
-  illusioner:
-    name: "&e✨ &e&lИЛЛЮЗИОНИСТ"
-    rarity: LEGENDARY
-    icon: ILLUSIONER_SPAWN_EGG
-    summon_command: 'summon illusioner'
-    stats:
-      health: 70
-      speed: 0.29
-      damage: 11
-    equip:
-      helmet: NETHERITE_HELMET
-      chestplate: NETHERITE_CHESTPLATE
-      mainhand: BOW
-    lore:
-      - "&8&m------------------------"
-      - "&7Категория: &6Легендарный Босс"
-      - "&7Роль: &eМастер Фантомов"
-      - "&8&m------------------------"
-      - "&7• Создаёт обманные копии"
-      - "&7• Ослепляет цель (Blindness)"
-    effects:
-      - "SPEED:1"
-    on_hit_effects:
-      - "BLINDNESS:0:4"
-    hit_and_run: false
-
   evoker:
-    name: "&6🔮 &6&lЭВОКЕР-АРХИМАГ"
+    name: "&6🔮 &lЭВОКЕР-АРХИМАГ"
     rarity: LEGENDARY
     icon: EVOKER_SPAWN_EGG
     summon_command: 'summon evoker'
@@ -584,20 +443,15 @@ mobs:
       mainhand: NETHERITE_SWORD
       offhand: TOTEM_OF_UNDYING
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &6Легендарный Босс"
-      - "&7Роль: &6Суммонер"
-      - "&8&m------------------------"
-      - "&7• Призывает Вексов и Клыки"
-      - "&7• Защищён Тотемом Бессмертия"
-      - "&7• Ослабляет цель при ударе"
+      - "&8• &7Суммонер Вексов"
+      - "&8• &7Защищён Тотемом"
     effects: []
     on_hit_effects:
       - "WEAKNESS:1:5"
     hit_and_run: false
 
   wither_skeleton_master:
-    name: "&8⚔ &8&lПОБЕДИТЕЛЬ: ВИЗЕР-МАСТЕР"
+    name: "&6⚔ &lВИЗЕР-МАСТЕР"
     rarity: LEGENDARY
     icon: WITHER_SKELETON_SPAWN_EGG
     summon_command: 'summon wither_skeleton'
@@ -613,12 +467,8 @@ mobs:
       mainhand: NETHERITE_SWORD
       offhand: TOTEM_OF_UNDYING
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &6Легендарный Босс"
-      - "&7Роль: &8Незеритовый Палач"
-      - "&8&m------------------------"
-      - "&7• Полный фулл-сет незерита"
-      - "&7• Смертельный Wither II"
+      - "&8• &7Фулл-незерит"
+      - "&8• &7Смертельный Wither II"
     effects:
       - "SPEED:1"
     on_hit_effects:
@@ -626,7 +476,7 @@ mobs:
     hit_and_run: false
 
   titan_golem:
-    name: "&c👑 &c&l&nТИТАН-ГОЛЕМ&r"
+    name: "&6👑 &l&nТИТАН-ГОЛЕМ"
     rarity: LEGENDARY
     icon: IRON_GOLEM_SPAWN_EGG
     summon_command: 'summon iron_golem'
@@ -641,12 +491,8 @@ mobs:
       boots: NETHERITE_BOOTS
       offhand: TOTEM_OF_UNDYING
     lore:
-      - "&8&m------------------------"
-      - "&7Категория: &6Легендарный Босс"
-      - "&7Роль: &cАбсолютный Неразрушимый"
-      - "&8&m------------------------"
-      - "&7• Колоссальный урон и HP"
-      - "&7• Огнеупорный + иммун к отбрасыванию"
+      - "&8• &7Колоссальный HP и урон"
+      - "&8• &7Огнеупорный"
     effects:
       - "FIRE_RESISTANCE:0"
     on_hit_effects:

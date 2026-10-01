@@ -128,20 +128,28 @@ mobs:
     hit_and_run: false
 
   creeper:
-    name: "&7💥 Крипер-диверсант"
-    rarity: COMMON
+    name: "&6💥 Шахед 💥"
+    rarity: LEGENDARY
     icon: CREEPER_SPAWN_EGG
-    summon_command: 'summon creeper'
+    summon_command: 'summon creeper ~ ~ ~ {powered:1b}'
     stats:
-      health: 6
+      health: 60
       speed: 0.60
-      damage: 14
+      damage: 40
+    equip:
+      offhand: TOTEM_OF_UNDYING
     lore:
-      - "&8• &7Молниеносный камикадзе"
-      - "&8• &7Умирает от одного удара"
+      - "&8• &7Легендарный камикадзе"
+      - "&8• &7Молниеносная скорость"
+      - "&8• &7Держит тотем бессмертия"
+      - "&8• &7Взрыв травит цель"
     effects:
       - "SPEED:3"
-    on_hit_effects: []
+      - "FIRE_RESISTANCE:0"
+    on_hit_effects:
+      - "POISON:2:6"
+      - "SLOWNESS:1:4"
+      - "BLINDNESS:0:3"
     hit_and_run: false
 
   husk:

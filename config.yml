@@ -103,7 +103,7 @@ mobs:
       wither_weak:
     name: "&d💀 igroplay227"
     rarity: LEGENDARY
-    icon: Bedrock
+    icon: CREEPER_SPAWN_EGG
     summon_command: 'summon wither ~ ~ ~ {Health:1f}'
     stats:
       health: 1

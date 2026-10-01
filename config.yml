@@ -99,18 +99,3 @@ mobs:
       - "SLOWNESS:1:4"
       - "BLINDNESS:0:3"
     hit_and_run: false
-
-      wither_weak:
-    name: "&d💀 igroplay227"
-    rarity: LEGENDARY
-    icon: CREEPER_SPAWN_EGG
-    summon_command: 'summon wither ~ ~ ~ {Health:1f}'
-    stats:
-      health: 1
-      speed: 0.30
-      damage: 1
-    lore:
-      - "&8• &7Проголосуй и ты сдохнешь"
-    effects: []
-    on_hit_effects: []
-    hit_and_run: false

@@ -75,439 +75,450 @@ hit_and_run:
 
 mobs:
 
-  zombie:
-    name: "&7⚔ Зомби-воин"
-    rarity: COMMON
-    icon: ZOMBIE_SPAWN_EGG
-    summon_command: 'summon zombie'
-    stats:
-      health: 22
-      speed: 0.24
-      damage: 4
-    lore:
-      - "&8• &7Пехота ближнего боя"
-      - "&8• &7Давит строем"
-    effects: []
-    on_hit_effects: []
-    hit_and_run: false
+  ZombieFighter:
+  Type: ZOMBIE
+  Display: '&7Зомби-Боец'
+  Health: 40
+  Damage: 5
+  MovementSpeed: 0.23
+  Armor: 4
+  Options:
+    MovementSpeed: 0.23
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 32
+  Equipment:
+    Helmet: NETHERITE_HELMET
+    Chestplate: IRON_CHESTPLATE
+    Leggings: IRON_LEGGINGS
+    Boots: IRON_BOOTS
+    MainHand: IRON_SWORD
+  Drops:
+    - IRON_INGOT 1-3
+  Skills:
+    - skill{s=WeakHit} ~onAttack
 
-  skeleton:
-    name: "&7🏹 Костяной стрелок"
-    rarity: COMMON
-    icon: SKELETON_SPAWN_EGG
-    summon_command: 'summon skeleton'
-    stats:
-      health: 24
-      speed: 0.27
-      damage: 5
-    equip:
-      mainhand: BOW
-    lore:
-      - "&8• &7Держит дистанцию"
-      - "&8• &7Слаб в ближнем бою"
-    effects: []
-    on_hit_effects: []
-    hit_and_run: false
+SkeletonArcher:
+  Type: SKELETON
+  Display: '&7Скелет-Стрелок'
+  Health: 36
+  Damage: 4
+  MovementSpeed: 0.25
+  Armor: 2
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 32
+  Equipment:
+    Helmet: CHAINMAIL_HELMET
+    Chestplate: CHAINMAIL_CHESTPLATE
+    Leggings: CHAINMAIL_LEGGINGS
+    Boots: CHAINMAIL_BOOTS
+    MainHand: BOW
+  Drops:
+    - BONE 1-3
+  Skills:
+    - skill{s=QuickShot} ~onAttack
 
-  spider:
-    name: "&7🕷 Ядовитый паук"
-    rarity: COMMON
-    icon: SPIDER_SPAWN_EGG
-    summon_command: 'summon spider'
-    stats:
-      health: 18
-      speed: 0.32
-      damage: 3
-    lore:
-      - "&8• &7Высокая скорость"
-      - "&8• &7Травит при укусе"
-    effects:
-      - "SPEED:1"
-    on_hit_effects:
-      - "POISON:0:3"
-    hit_and_run: false
+SpiderStriker:
+  Type: SPIDER
+  Display: '&7Паук-Охотник'
+  Health: 32
+  Damage: 5
+  MovementSpeed: 0.3
+  Armor: 2
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 32
+  Drops:
+    - STRING 1-2
+  Skills:
+    - skill{s=WebTrap} ~onAttack
 
-  husk:
-    name: "&a🌵 Пустынный хаск"
-    rarity: RARE
-    icon: HUSK_SPAWN_EGG
-    summon_command: 'summon husk'
-    stats:
-      health: 26
-      speed: 0.24
-      damage: 5
-    lore:
-      - "&8• &7Накладывает голод"
-    effects: []
-    on_hit_effects:
-      - "HUNGER:1:5"
-    hit_and_run: false
+HuskWarrior:
+  Type: HUSK
+  Display: '&aХаск-Воин'
+  Health: 55
+  Damage: 7
+  MovementSpeed: 0.26
+  Armor: 6
+  Options:
+    MovementSpeed: 0.26
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 32
+  Equipment:
+    Helmet: NETHERITE_HELMET
+    Chestplate: DIAMOND_CHESTPLATE
+    Leggings: DIAMOND_LEGGINGS
+    Boots: DIAMOND_BOOTS
+    MainHand: DIAMOND_SWORD
+  Drops:
+    - DIAMOND 1-2
+    - GOLD_INGOT 2-4
+  Skills:
+    - skill{s=PowerStrike} ~onAttack
 
-  stray:
-    name: "&a❄ Ледяной стрэй"
-    rarity: RARE
-    icon: STRAY_SPAWN_EGG
-    summon_command: 'summon stray'
-    stats:
-      health: 24
-      speed: 0.27
-      damage: 5
-    equip:
-      mainhand: BOW
-    lore:
-      - "&8• &7Замедляет цель"
-    effects: []
-    on_hit_effects:
-      - "SLOWNESS:1:4"
-    hit_and_run: false
+StraySniper:
+  Type: STRAY
+  Display: '&aСтрей-Снайпер'
+  Health: 50
+  Damage: 6
+  MovementSpeed: 0.27
+  Armor: 4
+  Options:
+    MovementSpeed: 0.27
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 40
+  Equipment:
+    Helmet: DIAMOND_HELMET
+    Chestplate: IRON_CHESTPLATE
+    Leggings: IRON_LEGGINGS
+    Boots: IRON_BOOTS
+    MainHand: BOW
+  Drops:
+    - DIAMOND 1
+    - ARROW 4-8
+  Skills:
+    - skill{s=FrostShot} ~onAttack
 
-  cave_spider:
-    name: "&a☣ Пещерный охотник"
-    rarity: RARE
-    icon: CAVE_SPIDER_SPAWN_EGG
-    summon_command: 'summon cave_spider'
-    stats:
-      health: 14
-      speed: 0.34
-      damage: 4
-    lore:
-      - "&8• &7Молниеносный ассасин"
-      - "&8• &7Смертельный яд"
-    effects:
-      - "SPEED:1"
-    on_hit_effects:
-      - "POISON:1:5"
-    hit_and_run: false
+SlimeJumper:
+  Type: SLIME
+  Display: '&aСлайм-Прыгун'
+  Health: 45
+  Damage: 6
+  MovementSpeed: 0.4
+  Size: 2
+  Options:
+    MovementSpeed: 0.4
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 32
+  Drops:
+    - SLIME_BALL 2-4
+  Skills:
+    - skill{s=SlimeLeap} ~onTimer:60
 
-  zombie_knight:
-    name: "&a🛡 Зомби-рыцарь"
-    rarity: RARE
-    icon: ZOMBIE_SPAWN_EGG
-    summon_command: 'summon zombie'
-    stats:
-      health: 36
-      speed: 0.24
-      damage: 7
-    equip:
-      helmet: NETHERITE_HELMET
-      chestplate: NETHERITE_CHESTPLATE
-      leggings: NETHERITE_LEGGINGS
-      boots: NETHERITE_BOOTS
-      mainhand: NETHERITE_SWORD
-      offhand: TOTEM_OF_UNDYING
-    lore:
-      - "&8• &7Незеритовая защита"
-      - "&8• &7Держит тотем"
-    effects: []
-    on_hit_effects: []
-    hit_and_run: false
+PiglinBruteFighter:
+  Type: PIGLIN_BRUTE
+  Display: '&9Пиглин-Брут'
+  Health: 70
+  Damage: 9
+  MovementSpeed: 0.26
+  Armor: 8
+  Options:
+    MovementSpeed: 0.26
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 32
+  Equipment:
+    Helmet: NETHERITE_HELMET
+    Chestplate: NETHERITE_CHESTPLATE
+    Leggings: NETHERITE_LEGGINGS
+    Boots: NETHERITE_BOOTS
+    MainHand: NETHERITE_AXE
+  Drops:
+    - NETHERITE_SCRAP 1
+    - GOLD_INGOT 3-6
+  Skills:
+    - skill{s=BruteRage} ~onAttack
 
-  slime_king:
-    name: "&a🟢 Королевская слизь"
-    rarity: RARE
-    icon: SLIME_SPAWN_EGG
-    summon_command: 'summon slime ~ ~ ~ {Size:8}'
-    stats:
-      health: 80
-      speed: 0.38
-      damage: 12
-    lore:
-      - "&8• &7Гигантская слизь"
-      - "&8• &7Разбивается на мелких"
-      - "&8• &7Давит массой"
-    effects:
-      - "SPEED:2"
-      - "JUMP_BOOST:2"
-    on_hit_effects:
-      - "SLOWNESS:1:3"
-    hit_and_run: false
+WitherSkeletonKnight:
+  Type: WITHER_SKELETON
+  Display: '&9Рыцарь Иссушения'
+  Health: 75
+  Damage: 10
+  MovementSpeed: 0.27
+  Armor: 8
+  Options:
+    MovementSpeed: 0.27
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 32
+  Equipment:
+    Helmet: NETHERITE_HELMET
+    Chestplate: NETHERITE_CHESTPLATE
+    Leggings: NETHERITE_LEGGINGS
+    Boots: NETHERITE_BOOTS
+    MainHand: NETHERITE_SWORD
+  Drops:
+    - WITHER_SKELETON_SKULL 1
+    - NETHERITE_INGOT 1
+  Skills:
+    - skill{s=WitherStrike} ~onAttack
 
-  skeleton_poison:
-    name: "&b🧪 Скелет-отравитель"
-    rarity: SUPER_RARE
-    icon: SKELETON_SPAWN_EGG
-    summon_command: 'summon skeleton'
-    stats:
-      health: 26
-      speed: 0.29
-      damage: 6
-    equip:
-      helmet: CHAINMAIL_HELMET
-      chestplate: CHAINMAIL_CHESTPLATE
-      mainhand: BOW
-    lore:
-      - "&8• &7Отравленные стрелы"
-      - "&8• &7Анти-танк"
-    effects:
-      - "SPEED:1"
-    on_hit_effects:
-      - "POISON:1:5"
-    hit_and_run: false
+EndermanAssassin:
+  Type: ENDERMAN
+  Display: '&9Ассасин Края'
+  Health: 80
+  Damage: 11
+  MovementSpeed: 0.3
+  Armor: 6
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 48
+  Drops:
+    - ENDER_PEARL 2-4
+  Skills:
+    - skill{s=TeleportStrike} ~onTimer:80
 
-  skeleton_wither:
-    name: "&b💀 Скелет-иссушитель"
-    rarity: SUPER_RARE
-    icon: WITHER_SKELETON_SPAWN_EGG
-    summon_command: 'summon wither_skeleton'
-    stats:
-      health: 32
-      speed: 0.28
-      damage: 8
-    equip:
-      helmet: NETHERITE_HELMET
-      mainhand: NETHERITE_SWORD
-    lore:
-      - "&8• &7Высасывает жизнь"
-      - "&8• &7Wither II"
-    effects: []
-    on_hit_effects:
-      - "WITHER:1:5"
-    hit_and_run: false
+VindicatorExecutioner:
+  Type: VINDICATOR
+  Display: '&5Палач'
+  Health: 100
+  Damage: 13
+  MovementSpeed: 0.28
+  Armor: 10
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 40
+  Equipment:
+    Helmet: NETHERITE_HELMET
+    Chestplate: NETHERITE_CHESTPLATE
+    Leggings: NETHERITE_LEGGINGS
+    Boots: NETHERITE_BOOTS
+    MainHand: NETHERITE_AXE
+  Drops:
+    - NETHERITE_INGOT 1-2
+    - EMERALD 4-8
+  Skills:
+    - skill{s=ExecuteStrike} ~onAttack
 
-  skeleton_cheater:
-    name: "&b⚡ Скелет-читер"
-    rarity: SUPER_RARE
-    icon: SKELETON_SPAWN_EGG
-    summon_command: 'summon skeleton'
-    stats:
-      health: 10
-      speed: 0.65
-      damage: 11
-    equip:
-      mainhand: BOW
-    lore:
-      - "&8• &7Нереальная скорость"
-      - "&8• &7Стреляет без остановки"
-      - "&8• &7Умирает от чиха"
-    effects:
-      - "SPEED:4"
-      - "JUMP_BOOST:2"
-    on_hit_effects: []
-    hit_and_run: true
+RavagerDestroyer:
+  Type: RAVAGER
+  Display: '&5Разрушитель'
+  Health: 130
+  Damage: 14
+  MovementSpeed: 0.25
+  Armor: 12
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 40
+  Drops:
+    - NETHERITE_INGOT 2
+    - SADDLE 1
+  Skills:
+    - skill{s=GroundSmash} ~onTimer:100
 
-  zombie_archer:
-    name: "&b🎯 Зомби-снайпер"
-    rarity: SUPER_RARE
-    icon: SKELETON_SPAWN_EGG
-    summon_command: 'summon skeleton'
-    stats:
-      health: 30
-      speed: 0.26
-      damage: 7
-    equip:
-      helmet: ZOMBIE_HEAD
-      chestplate: NETHERITE_CHESTPLATE
-      leggings: NETHERITE_LEGGINGS
-      boots: NETHERITE_BOOTS
-      mainhand: BOW
-    lore:
-      - "&8• &7Бронированный стрелок"
-      - "&8• &7Замедляет при попадании"
-    effects: []
-    on_hit_effects:
-      - "SLOWNESS:1:3"
-    hit_and_run: false
+WardenReaper:
+  Type: WARDEN
+  Display: '&5Жнец Бездны'
+  Health: 160
+  Damage: 16
+  MovementSpeed: 0.24
+  Armor: 14
+  Options:
+    MovementSpeed: 0.24
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 48
+  Drops:
+    - NETHERITE_INGOT 3
+    - ECHO_SHARD 4-8
+  Skills:
+    - skill{s=SonicBlast} ~onTimer:120
 
-  enderman:
-    name: "&5🔮 Страж Эндера"
-    rarity: EPIC
-    icon: ENDERMAN_SPAWN_EGG
-    summon_command: 'summon enderman'
-    stats:
-      health: 44
-      speed: 0.32
-      damage: 9
-    lore:
-      - "&8• &7Мгновенный телепорт"
-      - "&8• &7Боится воды"
-    effects: []
-    on_hit_effects: []
-    hit_and_run: false
+PhantomCreeperLord:
+  Type: PHANTOM
+  Display: '&6&lЛЕГЕНДАРНЫЙ ФАНТОМ-КРИПЕР'
+  Health: 150
+  Damage: 12
+  MovementSpeed: 0.32
+  Armor: 12
+  Size: 5
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 64
+    NoAI: false
+  Drops:
+    - NETHERITE_INGOT 3
+    - PHANTOM_MEMBRANE 6-10
+    - GUNPOWDER 8-16
+  Skills:
+    - skill{s=SummonCreeperRider} ~onSpawn
+    - skill{s=DiveBomb} ~onTimer:80
+    - skill{s=LegendaryAura} ~onTimer:40
 
-  iron_golem:
-    name: "&5🗿 Железный голем"
-    rarity: EPIC
-    icon: IRON_GOLEM_SPAWN_EGG
-    summon_command: 'summon iron_golem'
-    stats:
-      health: 110
-      speed: 0.22
-      damage: 14
-    lore:
-      - "&8• &7Монолитный танк"
-      - "&8• &7Подбрасывает врагов"
-    effects: []
-    on_hit_effects:
-      - "SLOWNESS:1:3"
-    hit_and_run: false
+PhantomCreeperRider:
+  Type: CREEPER
+  Display: '&c&lКрипер-Всадник'
+  Health: 60
+  Damage: 0
+  MovementSpeed: 0
+  Options:
+    MovementSpeed: 0
+    PreventOtherDrops: true
+    Despawn: false
+    NoAI: true
+    Silent: true
+  Skills:
+    - skill{s=LegendaryExplosion} ~onDeath
 
-  vindicator:
-    name: "&5🪓 Палач-виндикатор"
-    rarity: EPIC
-    icon: VINDICATOR_SPAWN_EGG
-    summon_command: 'summon vindicator'
-    stats:
-      health: 30
-      speed: 0.32
-      damage: 15
-    equip:
-      mainhand: IRON_AXE
-    lore:
-      - "&8• &7Берсерк с топором"
-      - "&8• &7Много урона, мало HP"
-    effects:
-      - "SPEED:1"
-    on_hit_effects: []
-    hit_and_run: false
+ZombieFighterBoss:
+  Type: ZOMBIE
+  Display: '&6&lКОРОЛЬ ЗОМБИ'
+  Health: 180
+  Damage: 15
+  MovementSpeed: 0.26
+  Armor: 16
+  Options:
+    MovementSpeed: 0.26
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 48
+    AlwaysShowName: true
+  Equipment:
+    Helmet: NETHERITE_HELMET
+    Chestplate: NETHERITE_CHESTPLATE
+    Leggings: NETHERITE_LEGGINGS
+    Boots: NETHERITE_BOOTS
+    MainHand: NETHERITE_SWORD
+  Drops:
+    - NETHERITE_INGOT 4
+    - DIAMOND_BLOCK 1
+  Skills:
+    - skill{s=SummonMinions} ~onTimer:200
+    - skill{s=BossStrike} ~onAttack
 
-  ravager:
-    name: "&2🐗 Стенобитный разоритель"
-    rarity: MYTHIC
-    icon: RAVAGER_SPAWN_EGG
-    summon_command: 'summon ravager'
-    stats:
-      health: 110
-      speed: 0.30
-      damage: 13
-    lore:
-      - "&8• &7Джаггернаут"
-      - "&8• &7Сбивает строй"
-    effects: []
-    on_hit_effects: []
-    hit_and_run: false
+WeakHit:
+  Skills:
+    - damage{amount=2} @target
 
-  piglin_brute:
-    name: "&2🔥 Пиглин-брут"
-    rarity: MYTHIC
-    icon: PIGLIN_BRUTE_SPAWN_EGG
-    summon_command: 'summon piglin_brute'
-    stats:
-      health: 55
-      speed: 0.28
-      damage: 15
-    equip:
-      helmet: NETHERITE_HELMET
-      chestplate: NETHERITE_CHESTPLATE
-      mainhand: NETHERITE_AXE
-      offhand: TOTEM_OF_UNDYING
-    lore:
-      - "&8• &7Незеритовый топор"
-      - "&8• &7Ослабляет цель"
-    effects: []
-    on_hit_effects:
-      - "WEAKNESS:1:4"
-    hit_and_run: false
+QuickShot:
+  Skills:
+    - shoot{type=ARROW;velocity=3;damage=3} @target
 
-  elder_guardian:
-    name: "&2👁 Древний страж"
-    rarity: MYTHIC
-    icon: ELDER_GUARDIAN_SPAWN_EGG
-    summon_command: 'summon elder_guardian'
-    stats:
-      health: 90
-      speed: 0.25
-      damage: 9
-    lore:
-      - "&8• &7Утомляет цель"
-      - "&8• &7Игнорирует броню"
-    effects: []
-    on_hit_effects:
-      - "MINING_FATIGUE:1:6"
-      - "SLOWNESS:1:3"
-    hit_and_run: false
+WebTrap:
+  Skills:
+    - potion{type=SLOW;duration=40;level=1} @target
 
-  creeper:
-    name: "&d💥 Крипер-диверсант"
-    rarity: LEGENDARY
-    icon: CREEPER_SPAWN_EGG
-    summon_command: 'summon creeper ~ ~ ~ {powered:1b}'
-    stats:
-      health: 60
-      speed: 0.60
-      damage: 40
-    equip:
-      offhand: TOTEM_OF_UNDYING
-    lore:
-      - "&8• &7Легендарный камикадзе"
-      - "&8• &7Молниеносная скорость"
-      - "&8• &7Держит тотем бессмертия"
-      - "&8• &7Взрыв травит цель"
-    effects:
-      - "SPEED:3"
-      - "FIRE_RESISTANCE:0"
-    on_hit_effects:
-      - "POISON:2:6"
-      - "SLOWNESS:1:4"
-      - "BLINDNESS:0:3"
-    hit_and_run: false
+PowerStrike:
+  Skills:
+    - damage{amount=3} @target
 
-  evoker:
-    name: "&d🔮 Эвокер-архимаг"
-    rarity: LEGENDARY
-    icon: EVOKER_SPAWN_EGG
-    summon_command: 'summon evoker'
-    stats:
-      health: 70
-      speed: 0.26
-      damage: 13
-    equip:
-      helmet: NETHERITE_HELMET
-      chestplate: NETHERITE_CHESTPLATE
-      mainhand: NETHERITE_SWORD
-      offhand: TOTEM_OF_UNDYING
-    lore:
-      - "&8• &7Суммонер вексов"
-      - "&8• &7Защищён тотемом"
-    effects: []
-    on_hit_effects:
-      - "WEAKNESS:1:5"
-    hit_and_run: false
+FrostShot:
+  Skills:
+    - shoot{type=ARROW;velocity=3;damage=4} @target
+    - potion{type=SLOW;duration=60;level=1} @target
 
-  wither_skeleton_master:
-    name: "&d⚔ Визер-мастер"
-    rarity: LEGENDARY
-    icon: WITHER_SKELETON_SPAWN_EGG
-    summon_command: 'summon wither_skeleton'
-    stats:
-      health: 95
-      speed: 0.28
-      damage: 17
-    equip:
-      helmet: NETHERITE_HELMET
-      chestplate: NETHERITE_CHESTPLATE
-      leggings: NETHERITE_LEGGINGS
-      boots: NETHERITE_BOOTS
-      mainhand: NETHERITE_SWORD
-      offhand: TOTEM_OF_UNDYING
-    lore:
-      - "&8• &7Фулл-незерит"
-      - "&8• &7Смертельный wither II"
-    effects:
-      - "SPEED:1"
-    on_hit_effects:
-      - "WITHER:2:5"
-    hit_and_run: false
+SlimeLeap:
+  Skills:
+    - leap{velocity=1.2} @self
+    - damage{amount=3} @EntitiesInRadius{r=3}
 
-  titan_golem:
-    name: "&d👑 Титан-голем"
-    rarity: LEGENDARY
-    icon: IRON_GOLEM_SPAWN_EGG
-    summon_command: 'summon iron_golem'
-    stats:
-      health: 220
-      speed: 0.21
-      damage: 22
-    equip:
-      helmet: NETHERITE_HELMET
-      chestplate: NETHERITE_CHESTPLATE
-      leggings: NETHERITE_LEGGINGS
-      boots: NETHERITE_BOOTS
-      offhand: TOTEM_OF_UNDYING
-    lore:
-      - "&8• &7Колоссальный HP и урон"
-      - "&8• &7Огнеупорный"
-    effects:
-      - "FIRE_RESISTANCE:0"
-    on_hit_effects:
-      - "SLOWNESS:2:4"
-    hit_and_run: false
+BruteRage:
+  Skills:
+    - damage{amount=4} @target
+
+WitherStrike:
+  Skills:
+    - potion{type=WITHER;duration=60;level=1} @target
+
+TeleportStrike:
+  Skills:
+    - teleport{target=@target} @self
+    - damage{amount=4} @target
+
+ExecuteStrike:
+  Skills:
+    - damage{amount=5} @target
+
+GroundSmash:
+  Skills:
+    - damage{amount=6} @EntitiesInRadius{r=5}
+
+SonicBlast:
+  Skills:
+    - damage{amount=8} @EntitiesInRadius{r=8}
+
+DiveBomb:
+  Skills:
+    - leap{velocity=1.5} @self
+    - damage{amount=7} @EntitiesInRadius{r=4}
+
+LegendaryAura:
+  Skills:
+    - potion{type=SPEED;duration=60;level=1} @self
+
+SummonCreeperRider:
+  Skills:
+    - mount{type=PhantomCreeperRider} @self
+
+LegendaryExplosion:
+  Skills:
+    - explosion{power=3;fire=false} @self
+
+SummonMinions:
+  Skills:
+    - summon{type=ZombieFighter;amount=3;radius=4} @self
+
+BossStrike:
+  Skills:
+    - damage{amount=6} @target
+
+PhantomSquadLeader:
+  Type: PHANTOM
+  Display: '&bФантом-Лидер'
+  Health: 90
+  Damage: 9
+  MovementSpeed: 0.3
+  Armor: 8
+  Size: 3
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 48
+  Drops:
+    - PHANTOM_MEMBRANE 3-5
+  Skills:
+    - skill{s=DiveBomb} ~onTimer:120
+
+SlimeKing:
+  Type: SLIME
+  Display: '&bСлайм-Король'
+  Health: 110
+  Damage: 10
+  MovementSpeed: 0.35
+  Armor: 6
+  Size: 3
+  Options:
+    MovementSpeed: 0.35
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 40
+  Drops:
+    - SLIME_BLOCK 2-4
+  Skills:
+    - skill{s=SlimeLeap} ~onTimer:60
+    - skill{s=SummonMinions} ~onTimer:160
+
+HoglinJuggernaut:
+  Type: HOGLIN
+  Display: '&bХоглин-Джаггернаут'
+  Health: 120
+  Damage: 13
+  MovementSpeed: 0.27
+  Armor: 10
+  Options:
+    MovementSpeed: 0.27
+    PreventOtherDrops: true
+    Despawn: false
+    FollowRange: 40
+  Drops:
+    - PORKCHOP 6-10
+    - NETHERITE_INGOT 1
+  Skills:
+    - skill{s=GroundSmash} ~onTimer:100

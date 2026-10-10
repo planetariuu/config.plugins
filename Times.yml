@@ -1,3 +1,35 @@
-enabled: fasle
-message: "Ивент закончился пока!!"
-check-interval: 2400
+enabled: true
+
+gun:
+  max-energy: 100
+  portal-cost: 25
+  recharge-amount: 50
+  regular-max-distance: 500
+  regular-cooldown: 10000
+  prime-cooldown: 2000
+  tp-cooldown: 1500
+  join-cooldown: 15000
+  interdimensional-cooldown: 1800000
+  world-limit: 25000
+  regular-raycast: 150
+  prime-raycast: 200
+  sky-dist: 100
+  radar-range: 500.0
+  far-portal-distance: 100.0
+  portal-y-offset: -1
+  dest-center-offset: -2
+
+event:
+  month: 10
+  day: 10
+  hour: 21
+  minute: 0
+  timezone: "Europe/Moscow"
+
+cutscene:
+  start-delay: 60
+  join-gap: 30
+  leave-gap: 25
+  line-min-ticks: 30
+  speaker-change-extra: 10
+  dramatic-pause: 40

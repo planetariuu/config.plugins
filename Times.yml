@@ -1,1 +1,3 @@
 enabled: true
+message: "Ивент закончился, удали плагин!"
+check-interval: 2400

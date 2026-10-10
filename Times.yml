@@ -1,4 +1,6 @@
+enabled=fasle
 enabled: fasle
+
 
 gun:
   max-energy: 100

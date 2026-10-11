@@ -1,31 +1,27 @@
+default_world: world
 duel:
-  rounds_to_win: 3
-  spawn_delay_ticks: 10
-  max_mobs_per_player: 50
   timer_seconds: 300
   timer_warn_at: 60
+  spawn_delay_ticks: 10
   spectator_bounds: 40.0
   spectator_center_y_offset: 5.0
-
   child_track_radius_x: 60.0
   child_track_radius_y: 30.0
   child_track_radius_z: 60.0
-
-  track_children_types:
-    - VEX
-    - SLIME
-    - MAGMA_CUBE
-    - GHAST
-    - PHANTOM
-    - SILVERFISH
-    - ENDERMITE
-    - CREEPER
-
+  track_children_types: []
+arena_settings:
+  mob_offset_x: 8.0
+  spawn_spacing: 1.5
+  spawn_per_row: 6
+  player_offset_x: 20.0
+  player_height_offset: 15.0
+bet_values:
+  default: 50
 rarity_weights:
   COMMON: 44
-  RARE: 28
-  SUPER_RARE: 14
-  EPIC: 8
+  RARE: 26
+  SUPER_RARE: 15
+  EPIC: 9
   MYTHIC: 4
   LEGENDARY: 2
 

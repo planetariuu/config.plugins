@@ -1,22 +1,72 @@
+#██████╗░██╗░░░░░░█████╗░███╗░░██╗███████╗████████╗░█████╗░██████╗░██╗██╗░░░██╗██╗░░░██╗
+#██╔══██╗██║░░░░░██╔══██╗████╗░██║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██║██║░░░██║██║░░░██║
+#██████╔╝██║░░░░░███████║██╔██╗██║█████╗░░░░░██║░░░███████║██████╔╝██║██║░░░██║██║░░░██║
+#██╔═══╝░██║░░░░░██╔══██║██║╚████║██╔══╝░░░░░██║░░░██╔══██║██╔══██╗██║██║░░░██║██║░░░██║
+#██║░░░░░███████╗██║░░██║██║░╚███║███████╗░░░██║░░░██║░░██║██║░░██║██║╚██████╔╝╚██████╔╝
+#╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚══╝╚══════╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚═════╝░░╚═════╝░
+
 default_world: world
+
+
+
 duel:
+  
   timer_seconds: 300
+
+ 
   timer_warn_at: 60
+
+ 
   spawn_delay_ticks: 10
+
+ 
   spectator_bounds: 40.0
+
+ 
   spectator_center_y_offset: 5.0
+
+ 
   child_track_radius_x: 60.0
   child_track_radius_y: 30.0
   child_track_radius_z: 60.0
+
+  
+ 
+  
   track_children_types: []
+
+
+
 arena_settings:
+  
   mob_offset_x: 8.0
+
+ 
   spawn_spacing: 1.5
+
+  
   spawn_per_row: 6
+
+
   player_offset_x: 20.0
+
+ 
   player_height_offset: 15.0
-bet_values:
-  default: 50
+
+
+
+arenas:
+  arena1: "2000 100 2000"
+  arena2: "2000 100 -2000"
+  arena3: "-2000 100 -2000"
+
+
+
+hit_and_run:
+  backoff_power: 0.6
+
+
+
 rarity_weights:
   COMMON: 44
   RARE: 26
@@ -25,8 +75,12 @@ rarity_weights:
   MYTHIC: 4
   LEGENDARY: 2
 
+
+
 bet_values:
   default: 50
+
+ 
   ARROW: 5
   COAL: 10
   CHARCOAL: 10
@@ -52,6 +106,8 @@ bet_values:
   COOKIE: 10
   SPECTRAL_ARROW: 20
   REDSTONE_TORCH: 20
+
+ 
   RAW_COPPER: 30
   LAPIS_LAZULI: 30
   COOKED_BEEF: 30
@@ -73,6 +129,9 @@ bet_values:
   COPPER_INGOT: 50
   TIPPED_ARROW: 50
   REPEATER: 50
+  AMETHYST_SHARD: 60
+
+ 
   RAW_GOLD: 80
   PRISMARINE_CRYSTALS: 80
   GLOWSTONE: 80
@@ -97,6 +156,8 @@ bet_values:
   WET_SPONGE: 50
   POTION: 100
   MAGMA_CREAM: 120
+
+  
   BOW: 150
   SHIELD: 200
   GOLD_INGOT: 200
@@ -128,6 +189,9 @@ bet_values:
   GOLDEN_APPLE: 400
   SHULKER_SHELL: 400
   GOLDEN_HORSE_ARMOR: 400
+  SEA_LANTERN: 200
+
+ 
   DIAMOND: 500
   DIAMOND_HELMET: 500
   DIAMOND_BOOTS: 500
@@ -136,7 +200,6 @@ bet_values:
   DIAMOND_AXE: 600
   DIAMOND_CHESTPLATE: 800
   DIAMOND_LEGGINGS: 700
-  AMETHYST_SHARD: 60
   AMETHYST_BLOCK: 540
   COPPER_BLOCK: 450
   RAW_IRON_BLOCK: 450
@@ -146,7 +209,8 @@ bet_values:
   REDSTONE_BLOCK: 180
   LAPIS_BLOCK: 270
   QUARTZ_BLOCK: 360
-  SEA_LANTERN: 200
+
+
   ANCIENT_DEBRIS: 700
   NETHERITE_SCRAP: 800
   HEART_OF_THE_SEA: 800
@@ -177,31 +241,9 @@ bet_values:
   DRAGON_EGG: 5000
   NETHERITE_BLOCK: 9000
 
-arena_settings:
-  player_offset_x: 20.0
-  player_height_offset: 15.0
-  mob_offset_x: 8.0
-  spawn_spacing: 1.5
-  spawn_per_row: 6
-
-default_world: world
-
-arenas:
-  arena1: "2000 100 2000"
-  arena2: "2000 100 -2000"
-  arena3: "-2000 100 -2000"
-
-spawn_count_weights:
-  1-3: 40
-  4-7: 30
-  8-12: 20
-  13-17: 8
-  18-20: 2
-
-hit_and_run:
-  backoff_power: 0.6
-
 mobs:
+
+ 
 
   zombie:
     name: "&7⚔ Зомби-воин"
@@ -254,6 +296,43 @@ mobs:
     on_hit_effects:
       - "POISON:0:3"
     hit_and_run: false
+
+  drowned:
+    name: "&7🔱 Утопленник"
+    rarity: COMMON
+    icon: DROWNED_SPAWN_EGG
+    summon_command: 'summon drowned'
+    stats:
+      health: 20
+      speed: 0.23
+      damage: 5
+    equip:
+      mainhand: TRIDENT
+    lore:
+      - "&8• &7С трезубцем"
+      - "&8• &7Бьёт в ближнем бою"
+    effects: []
+    on_hit_effects: []
+    hit_and_run: false
+
+  silverfish:
+    name: "&7🐛 Чешуйница"
+    rarity: COMMON
+    icon: SILVERFISH_SPAWN_EGG
+    summon_command: 'summon silverfish'
+    stats:
+      health: 8
+      speed: 0.42
+      damage: 3
+    lore:
+      - "&8• &7Мало HP, но быстрая"
+      - "&8• &7Их может быть много"
+    effects:
+      - "SPEED:1"
+    on_hit_effects: []
+    hit_and_run: false
+
+ 
 
   husk:
     name: "&a🌵 Пустынный хаск"
@@ -333,21 +412,40 @@ mobs:
     name: "&a🟢 Королевская слизь"
     rarity: RARE
     icon: SLIME_SPAWN_EGG
-    summon_command: 'summon slime ~ ~ ~ {Size:6}'
+    summon_command: 'summon slime'
     stats:
       health: 60
       speed: 0.32
       damage: 8
     lore:
-      - "&8• &7Крупная слизь"
-      - "&8• &7Разбивается на мелких"
       - "&8• &7Давит массой"
+      - "&8• &7Замедляет ударом"
     effects:
       - "SPEED:1"
       - "JUMP_BOOST:2"
     on_hit_effects:
       - "SLOWNESS:0:3"
     hit_and_run: false
+
+  witch:
+    name: "&a🧙 Ведьма"
+    rarity: RARE
+    icon: WITCH_SPAWN_EGG
+    summon_command: 'summon witch'
+    stats:
+      health: 26
+      speed: 0.25
+      damage: 5
+    lore:
+      - "&8• &7Кидает зелья"
+      - "&8• &7Травит и замедляет"
+    effects: []
+    on_hit_effects:
+      - "POISON:1:4"
+      - "SLOWNESS:0:4"
+    hit_and_run: false
+
+ 
 
   skeleton_poison:
     name: "&b🧪 Скелет-отравитель"
@@ -435,6 +533,43 @@ mobs:
       - "SLOWNESS:0:3"
     hit_and_run: false
 
+  phantom:
+    name: "&b🦇 Фантом"
+    rarity: SUPER_RARE
+    icon: PHANTOM_SPAWN_EGG
+    summon_command: 'summon phantom'
+    stats:
+      health: 20
+      speed: 0.42
+      damage: 6
+    lore:
+      - "&8• &7Летающий охотник"
+      - "&8• &7Ослепляет укусом"
+    effects:
+      - "SPEED:1"
+    on_hit_effects:
+      - "BLINDNESS:0:3"
+    hit_and_run: false
+
+  blaze:
+    name: "&b🔥 Всполох"
+    rarity: SUPER_RARE
+    icon: BLAZE_SPAWN_EGG
+    summon_command: 'summon blaze'
+    stats:
+      health: 20
+      speed: 0.30
+      damage: 6
+    lore:
+      - "&8• &7Стреляет огнём"
+      - "&8• &7Иммунен к огню"
+    effects:
+      - "FIRE_RESISTANCE:0"
+    on_hit_effects: []
+    hit_and_run: false
+
+
+
   enderman:
     name: "&5🔮 Страж Эндера"
     rarity: EPIC
@@ -485,6 +620,41 @@ mobs:
       - "SPEED:1"
     on_hit_effects: []
     hit_and_run: false
+
+  hoglin:
+    name: "&5🐗 Хоглин"
+    rarity: EPIC
+    icon: HOGLIN_SPAWN_EGG
+    summon_command: 'summon hoglin'
+    stats:
+      health: 40
+      speed: 0.30
+      damage: 8
+    lore:
+      - "&8• &7Отбрасывает цель"
+      - "&8• &7Сам не отбрасывается"
+    effects: []
+    on_hit_effects:
+      - "SLOWNESS:0:2"
+    hit_and_run: false
+
+  guardian:
+    name: "&5👁 Страж"
+    rarity: EPIC
+    icon: GUARDIAN_SPAWN_EGG
+    summon_command: 'summon guardian'
+    stats:
+      health: 30
+      speed: 0.30
+      damage: 7
+    lore:
+      - "&8• &7Стреляет лазером"
+      - "&8• &7Игнорирует броню"
+    effects: []
+    on_hit_effects:
+      - "MINING_FATIGUE:0:3"
+    hit_and_run: false
+
 
   ravager:
     name: "&2🐗 Стенобитный разоритель"
@@ -542,11 +712,31 @@ mobs:
       - "SLOWNESS:0:3"
     hit_and_run: false
 
+  warden:
+    name: "&2🌑 Хранитель Глубин"
+    rarity: MYTHIC
+    icon: SCULK_SHRIEKER
+    summon_command: 'summon warden'
+    stats:
+      health: 150
+      speed: 0.28
+      damage: 15
+    lore:
+      - "&8• &7Сокрушающий удар"
+      - "&8• &7Наводит тьму"
+      - "&8• &7Только для смелых"
+    effects: []
+    on_hit_effects:
+      - "BLINDNESS:0:4"
+      - "DARKNESS:0:3"
+    hit_and_run: false
+
+
   creeper:
     name: "&d💥 Крипер-диверсант"
     rarity: LEGENDARY
     icon: CREEPER_SPAWN_EGG
-    summon_command: 'summon creeper ~ ~ ~ {powered:1b}'
+    summon_command: 'summon creeper'
     stats:
       health: 50
       speed: 0.50

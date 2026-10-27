@@ -4,3 +4,410 @@
 #██╔═══╝░██║░░░░░██╔══██║██║╚████║██╔══╝░░░░░██║░░░██╔══██║██╔══██╗██║██║░░░██║██║░░░██║
 #██║░░░░░███████╗██║░░██║██║░╚███║███████╗░░░██║░░░██║░░██║██║░░██║██║╚██████╔╝╚██████╔╝
 #╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚══╝╚══════╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚═════╝░░╚═════╝░
+
+default_world: world
+
+
+arenas:
+  arena_1:
+    - 2000
+    - 220
+    - 2000
+    - world
+  arena_2:
+    - 2200
+    - 220
+    - 2000
+    - world
+
+arena_settings:
+  mob_offset_x: 8.0
+  spawn_spacing: 1.5
+  spawn_per_row: 6
+  player_offset_x: 20.0
+  player_height_offset: 15.0
+
+duel:
+  spawn_delay_ticks: 10
+  timer_seconds: 300
+  timer_warn_at: 60
+
+  # Зрители
+  spectator_bounds: 40.0
+  spectator_center_y_offset: 5.0
+
+  child_track_radius_x: 60.0
+  child_track_radius_y: 30.0
+  child_track_radius_z: 60.0
+  track_children_types:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CAVE_SPIDER
+    - CREEPER
+    - BLAZE
+    - WITHER_SKELETON
+    - PILLAGER
+    - VINDICATOR
+    - HUSK
+    - DROWNED
+    - STRAY
+    - PIGLIN
+    - PIGLIN_BRUTE
+    - ZOMBIFIED_PIGLIN
+    - HOGLIN
+    - ZOGLIN
+
+hit_and_run:
+  backoff_power: 0.6
+
+rarity_weights:
+  COMMON: 44
+  RARE: 26
+  SUPER_RARE: 15
+  EPIC: 9
+  MYTHIC: 4
+  LEGENDARY: 2
+
+bet_values:
+  default: 50
+
+  IRON_INGOT: 20
+  IRON_BLOCK: 180
+  GOLD_INGOT: 40
+  GOLD_BLOCK: 360
+  DIAMOND: 500
+  DIAMOND_BLOCK: 4500
+  EMERALD: 250
+  EMERALD_BLOCK: 2250
+  NETHERITE_SCRAP: 500
+  ANCIENT_DEBRIS: 550
+  NETHERITE_INGOT: 2000
+
+  NETHER_STAR: 8000
+  BEACON: 5000
+  ELYTRA: 3500
+  TOTEM_OF_UNDYING: 2500
+  TRIDENT: 1500
+  ENCHANTED_GOLDEN_APPLE: 5000
+  GOLDEN_APPLE: 500
+  SHULKER_BOX: 500
+  NETHERITE_SWORD: 3000
+  NETHERITE_CHESTPLATE: 5000
+  DIAMOND_SWORD: 1000
+
+
+mobs:
+
+  zombie_grunt:
+    name: "&7Зомби-пехотинец"
+    summon_command: "summon zombie"
+    rarity: COMMON
+    lore:
+      - "&7Обычный зомби, каких полно в ночи."
+      - "&7Медленный, но упорный."
+    stats:
+      health: 20.0
+      speed: 0.23
+      damage: 3.0
+
+  skeleton_archer:
+    name: "&7Скелет-лучник"
+    summon_command: "summon skeleton"
+    rarity: COMMON
+    lore:
+      - "&7Стреляет издалека, не жалея стрел."
+    stats:
+      health: 20.0
+      speed: 0.25
+      damage: 4.0
+
+  creeper:
+    name: "&7Крипер"
+    summon_command: "summon creeper"
+    rarity: COMMON
+    lore:
+      - "&7Взрывается, унося врагов с собой."
+    stats:
+      health: 20.0
+      speed: 0.25
+      damage: 2.0
+
+  spider:
+    name: "&7Паук"
+    summon_command: "summon spider"
+    rarity: COMMON
+    lore:
+      - "&7Цепкий и ловкий, прыгает на цель."
+    stats:
+      health: 16.0
+      speed: 0.30
+      damage: 3.0
+
+  husk:
+    name: "&7Кадавр"
+    summon_command: "summon husk"
+    rarity: COMMON
+    lore:
+      - "&7Зомби пустыни — не горит на солнце."
+    stats:
+      health: 20.0
+      speed: 0.23
+      damage: 3.0
+
+  cave_spider:
+    name: "&aЯдовитый паук"
+    summon_command: "summon cave_spider"
+    rarity: RARE
+    lore:
+      - "&aКусает — и жертва получает яд."
+      - "&aБыстрый и кусачий."
+    on_hit_effects:
+      - "POISON:0:5"
+    stats:
+      health: 16.0
+      speed: 0.40
+      damage: 3.0
+
+  blaze_sentinel:
+    name: "&aПламенный страж"
+    summon_command: "summon blaze"
+    rarity: RARE
+    lore:
+      - "&aОгненные шары летят быстро и больно."
+    effects:
+      - "FIRE_RESISTANCE:0"
+    stats:
+      health: 24.0
+      speed: 0.23
+      damage: 5.0
+
+  iron_knight:
+    name: "&aЖелезный рыцарь"
+    summon_command: "summon zombie"
+    rarity: RARE
+    lore:
+      - "&aЗомби, облачённый в полный железный сет."
+      - "&aМедленный, но живучий."
+    equip:
+      helmet: IRON_HELMET
+      chestplate: IRON_CHESTPLATE
+      leggings: IRON_LEGGINGS
+      boots: IRON_BOOTS
+      mainhand: IRON_SWORD
+    stats:
+      health: 30.0
+      speed: 0.20
+      damage: 6.0
+
+  vindicator_brute:
+    name: "&aПоборник"
+    summon_command: "summon vindicator"
+    rarity: RARE
+    lore:
+      - "&aРазрубает врагов тяжёлым топором."
+    stats:
+      health: 24.0
+      speed: 0.30
+      damage: 7.0
+
+  stray_hunter:
+    name: "&aЗимний охотник"
+    summon_command: "summon stray"
+    rarity: RARE
+    lore:
+      - "&aСтрелы замедляют жертву."
+    on_hit_effects:
+      - "SLOWNESS:1:5"
+    stats:
+      health: 20.0
+      speed: 0.25
+      damage: 4.0
+
+  wither_skeleton:
+    name: "&9Иссохший скелет"
+    summon_command: "summon wither_skeleton"
+    rarity: SUPER_RARE
+    lore:
+      - "&9Каждый удар несёт Иссушение."
+    on_hit_effects:
+      - "WITHER:1:4"
+    equip:
+      mainhand: STONE_SWORD
+    stats:
+      health: 26.0
+      speed: 0.25
+      damage: 5.0
+
+  pillager_sniper:
+    name: "&9Разбойник-снайпер"
+    summon_command: "summon pillager"
+    rarity: SUPER_RARE
+    lore:
+      - "&9Арбалет в руках — залог победы."
+    equip:
+      mainhand: CROSSBOW
+    stats:
+      health: 24.0
+      speed: 0.30
+      damage: 6.0
+
+  ravager:
+    name: "&9Опустошитель"
+    summon_command: "summon ravager"
+    rarity: SUPER_RARE
+    lore:
+      - "&9Громила, разбрасывающий врагов."
+    stats:
+      health: 60.0
+      speed: 0.30
+      damage: 8.0
+
+  witch:
+    name: "&9Ведьма"
+    summon_command: "summon witch"
+    rarity: SUPER_RARE
+    lore:
+      - "&9Варит зелья и кидает их в цель."
+    stats:
+      health: 26.0
+      speed: 0.25
+      damage: 4.0
+
+  evoker:
+    name: "&dЗаклинатель"
+    summon_command: "summon evoker"
+    rarity: EPIC
+    lore:
+      - "&dПризывает вексов и взывает к земле."
+    stats:
+      health: 32.0
+      speed: 0.25
+      damage: 6.0
+
+  piglin_brute:
+    name: "&dПиглин-громила"
+    summon_command: "summon piglin_brute"
+    rarity: EPIC
+    lore:
+      - "&dЗолотой топор в руках — смерть."
+    equip:
+      mainhand: GOLDEN_AXE
+    stats:
+      health: 50.0
+      speed: 0.30
+      damage: 10.0
+
+  magma_colossus:
+    name: "&dМагмовый колосс"
+    summon_command: "summon magma_cube"
+    rarity: EPIC
+    lore:
+      - "&dРаспадается на мелких, но злых собратьев."
+    effects:
+      - "FIRE_RESISTANCE:0"
+    stats:
+      health: 40.0
+      speed: 0.20
+      damage: 6.0
+
+  hoglin_brute:
+    name: "&dХоглин-громила"
+    summon_command: "summon hoglin"
+    rarity: EPIC
+    lore:
+      - "&dАтакует в лоб, не думая о защите."
+    stats:
+      health: 45.0
+      speed: 0.30
+      damage: 9.0
+
+
+  warden:
+    name: "&cХранитель Глубин"
+    summon_command: "summon warden"
+    rarity: MYTHIC
+    lore:
+      - "&cСонический удар сбивает с ног."
+      - "&cОдин взгляд — и ты ослеплён."
+    on_hit_effects:
+      - "BLINDNESS:0:3"
+      - "DARKNESS:0:4"
+    stats:
+      health: 200.0
+      speed: 0.30
+      damage: 15.0
+
+  wither:
+    name: "&cИссушитель"
+    summon_command: "summon wither"
+    rarity: MYTHIC
+    lore:
+      - "&cТри головы — три причины бежать."
+      - "&cИссушение съедает здоровье."
+    on_hit_effects:
+      - "WITHER:2:6"
+      - "SLOWNESS:0:3"
+    stats:
+      health: 180.0
+      speed: 0.25
+      damage: 12.0
+
+  elder_guardian:
+    name: "&cДревний страж"
+    summon_command: "summon elder_guardian"
+    rarity: MYTHIC
+    lore:
+      - "&cУсталость шахтёра не даст быстро бить."
+    on_hit_effects:
+      - "MINING_FATIGUE:2:8"
+    stats:
+      health: 100.0
+      speed: 0.25
+      damage: 10.0
+
+  wither_king:
+    name: "&eКороль Иссушения"
+    summon_command: "summon wither"
+    rarity: LEGENDARY
+    lore:
+      - "&eПовелитель тьмы и исчезновения."
+      - "&eОслабляет и замедляет всё живое."
+    on_hit_effects:
+      - "WITHER:3:8"
+      - "SLOWNESS:2:5"
+      - "WEAKNESS:1:5"
+    stats:
+      health: 300.0
+      speed: 0.30
+      damage: 18.0
+
+  ravager_alpha:
+    name: "&eОпустошитель-Альфа"
+    summon_command: "summon ravager"
+    rarity: LEGENDARY
+    lore:
+      - "&eГигант, сокрушающий всё на пути."
+    equip:
+      mainhand: NETHERITE_AXE
+    on_hit_effects:
+      - "SLOWNESS:1:3"
+    stats:
+      health: 180.0
+      speed: 0.35
+      damage: 20.0
+
+  warden_ancient:
+    name: "&eДревний Хранитель"
+    summon_command: "summon warden"
+    rarity: LEGENDARY
+    lore:
+      - "&eСила, которой не должно существовать."
+    on_hit_effects:
+      - "BLINDNESS:1:5"
+      - "DARKNESS:1:6"
+      - "SLOWNESS:1:4"
+    stats:
+      health: 350.0
+      speed: 0.32
+      damage: 25.0

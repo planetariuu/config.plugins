@@ -1,4 +1,4 @@
-CHANNEL=igroplay228
+CHANNEL=planetariuu
 TTS_PREFIX=\tts
 MAX_LEN=150
 LOCAL_PLAYBACK=true

@@ -1,0 +1,7 @@
+CHANNEL=igroplay228
+TTS_PREFIX=\tts
+MAX_LEN=150
+LOCAL_PLAYBACK=true
+
+king_mahito=aidar
+planetariuu=eugene
